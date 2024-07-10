@@ -1,0 +1,385 @@
+
+body {
+    overflow: hidden !important;
+    font-family: 'Bungee';
+    background: linear-gradient(135deg, #cff2c9, #f6ffce);
+    background-size: cover !important;
+
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+a {
+    color: #F6ffce;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #F6ffce;
+}
+
+.link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+.header>.name {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 0px -6px 0 #212121,
+    0px -6px 0 #212121,
+    0px 6px 0 #212121,
+    0px 6px 0 #212121,
+    -6px 0px 0 #212121,
+    6px 0px 0 #212121,
+    -6px 0px 0 #212121,
+    6px 0px 0 #212121,
+    -6px -6px 0 #212121,
+    6px -6px 0 #212121,
+    -6px 6px 0 #212121,
+    6px 6px 0 #212121,
+    -6px 18px 0 #212121,
+    0px 18px 0 #212121,
+    6px 18px 0 #212121,
+    0 19px 1px rgba(0, 0, 0, .1),
+    0 0 6px rgba(0, 0, 0, .1),
+    0 6px 3px rgba(0, 0, 0, .3),
+    0 12px 6px rgba(0, 0, 0, .2),
+    0 18px 18px rgba(0, 0, 0, .25),
+    0 24px 24px rgba(0, 0, 0, .2),
+    0 36px 36px rgba(0, 0, 0, .15) !important;
+}
+
+.description-box {
+    position: relative !important;
+    z-index: 3;
+    color: #fff;
+    margin: auto;
+    margin-bottom: 130px;
+    background: #212121;
+    width: clamp(900px, 65vw, 1800px);
+    /* Use viewport width units for better responsiveness */
+    text-align: left;
+    padding: 20px 20px 20px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-family: 'Montserrat';
+    font-size: clamp(14px, 1vw, 18px);
+    box-sizing: border-box;
+    transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
+    text-shadow: none !important;
+
+    max-width: 100%;
+    /* Ensures the box doesn't exceed the container's width */
+    max-height: 75vh;
+    /* Use viewport height units for better responsiveness */
+    overflow: auto;
+    /* Makes the box scrollable when content overflows */
+}
+
+/* For webkit-based browsers */
+.description-box::-webkit-scrollbar {
+    width: 10px;
+    /* Adjust scrollbar width */
+    background-color: #00000000;
+    /* Adjust scrollbar track background color */
+}
+
+.description-box::-webkit-scrollbar-thumb {
+    background-color: #A9A9A9;
+    /* Adjust scrollbar thumb color */
+    border-radius: 5px;
+    /* Adjust scrollbar thumb border-radius */
+}
+
+.description-box::-webkit-scrollbar-thumb:hover {
+    background-color: #808080;
+    /* Adjust scrollbar thumb color on hover */
+}
+
+.image {
+    height: 70vh;
+    width: 100%;
+    object-fit: cover !important;
+    border-radius: 5px;
+}
+
+.name {
+    text-align: center;
+    font-size: 120px;
+    color: #F6ffce;
+    margin: auto;
+    position: relative;
+    padding-top: 28px !important;
+    z-index: 4;
+}
+
+.description {
+    text-align: center;
+    font-size: 20px;
+    color: #212121;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-shadow: none !important;
+}
+
+.carousel {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.layout:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 90px;
+    width: 10px;
+    height: 100%;
+    border: 2px solid #212121;
+    border-top: none;
+    border-bottom: none;
+    opacity: 0.15;
+}
+
+.layout .box {
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    color: #212121;
+    transform-origin: 0% 10%;
+    transform: rotate(-90deg);
+    font-family: 'Bungee';
+    font-size: 9px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    opacity: 0.4;
+}
+
+.image-logo {
+    position: absolute;
+    z-index: 2;
+    top: 28px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Bungee';
+    pointer-events: all;
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    overflow: hidden;
+    padding-bottom: 0.1em;
+}
+
+.cursor {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    --size: 40px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    border: 3px solid #212121;
+    margin: calc(var(--size) * -0.5) 0 0 calc(var(--size) * -0.5);
+    transition: transform 0.85s cubic-bezier(0, 0.02, 0, 1);
+    display: none;
+    pointer-events: none !important;
+}
+
+
+.cursor2 {
+    --size: 2px;
+    transition-duration: 0.7s;
+}
+
+.social-media-icons {
+    position: fixed;
+    bottom: 30px;
+    /* Adjust the distance from the bottom edge */
+    right: 30px;
+    /* Adjust the distance from the right edge */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 100;
+    /* Ensure the icons appear above other elements */
+}
+
+.social-media-icons a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.social-media-icons i {
+    font-size: 32px;
+}
+
+.header {
+    display: flex;
+}
+
+.clickable {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+h4 {
+    font-family: 'Bungee';
+    font-size: 24px;
+}
+
+
+@media screen and (max-width: 1200px) {
+
+    .image-logo {
+        display: none !important;
+    }
+
+    .image {
+        height: 30vh;
+    }
+
+
+    .name {
+        text-align: center;
+        font-size: 10vw;
+        color: #F6ffce;
+        margin: auto;
+        position: relative;
+        padding-top: 28px !important;
+        z-index: 4;
+    }
+
+    .description {
+        margin: auto;
+        font-size: 4vw;
+        color: #212121;
+        position: relative;
+        text-align: center;
+        padding-top: 8px;
+        text-shadow: none !important;
+    }
+
+    .header>.name,
+    .title,
+    .num {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-shadow: 0px -3px 0 #212121,
+        0px -3px 0 #212121,
+        0px 3px 0 #212121,
+        0px 3px 0 #212121,
+        -3px 0px 0 #212121,
+        3px 0px 0 #212121,
+        -3px 0px 0 #212121,
+        3px 0px 0 #212121,
+        -3px -3px 0 #212121,
+        3px -3px 0 #212121,
+        -3px 3px 0 #212121,
+        3px 3px 0 #212121,
+        -3px 9px 0 #212121,
+        0px 9px 0 #212121,
+        3px 9px 0 #212121 !important;
+    }
+
+    .description-box {
+        position: relative !important;
+        align-items: center;
+        z-index: 3;
+        color: #fff;
+        margin: auto;
+        margin-bottom: 30px;
+        background: #212121;
+        width: clamp(300px, 85vw, 1200px);
+        /* Use viewport width units for better responsiveness */
+        text-align: left;
+        padding: 20px 20px 20px 20px;
+        border-radius: 5px;
+        font-family: 'Montserrat';
+        font-size: clamp(14px, 1vw, 18px);
+        box-sizing: border-box;
+        transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
+        text-shadow: none !important;
+
+        max-width: 100%;
+        /* Ensures the box doesn't exceed the container's width */
+        max-height: 65vh;
+        /* Use viewport height units for better responsiveness */
+        overflow: auto;
+        /* Makes the box scrollable when content overflows */
+    }
+
+    .layout {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    .layout .box {
+        display: none !important;
+    }
+
+    .layout:before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 50px;
+        width: 10px;
+        height: 100%;
+        border: 1px solid #212121;
+        border-top: none;
+        border-bottom: none;
+        opacity: 0.15;
+    }
+
+    .social-media-icons{
+        display: none !important;
+    }
+}
+
+.social-media-icons {
+    position: fixed;
+    bottom: 30px;
+    /* Adjust the distance from the bottom edge */
+    right: 30px;
+    /* Adjust the distance from the right edge */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 100;
+    /* Ensure the icons appear above other elements */
+}
+
+.social-media-icons a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.social-media-icons i {
+    font-size: 32px;
+}
